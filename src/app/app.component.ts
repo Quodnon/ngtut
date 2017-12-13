@@ -9,5 +9,5 @@ import {FormsModule} from '@angular/forms';
 
 
 export class AppComponent {
-  title = 'Tour Of Heroes';
+  title = 'Cabinet Of Heroes';
 }
