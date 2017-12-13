@@ -1,16 +1,9 @@
 <h2>My heroes</h2>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
-    <span class="badge">{{hero.level}}</span>{{hero.name}}   <span>{{hero.exp}}/{{hero.level*20+100}}</span></li>
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+    <!-- <img *ngSrc="hero.imgUrl" alt="#"> -->
+    <span class="badge">{{hero.level}}</span>{{hero.name}}
+    <span>{{hero.exp}}/{{hero.level*20+100}}</span>
+  </li>
 </ul>
-<div *ngIf="selectedHero">
-  <h2>{{selectedHero.name | uppercase}}</h2>
-  <div>
-    <span>id:</span>{{selectedHero.id}}</div>
-  <div>
-    <label> name:
-      <input [(ngModel)]="selectedHero.name" placeholder="name">
-    </label>
-  </div>
-  <div>{{selectedHero.description}}</div>
-</div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
