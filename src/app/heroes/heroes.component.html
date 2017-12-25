@@ -1,9 +1,9 @@
 <h2>My heroes</h2>
 <ul class="heroes">
   <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-    <!-- <img *ngSrc="hero.imgUrl" alt="#"> -->
-    <span class="badge">{{hero.level}}</span>{{hero.name}}
-    <span>{{hero.exp}}/{{hero.level*20+100}}</span>
+    <a routerLink="/detail/gero.id">
+      <span class="badge">{{hero.level}}</span>{{hero.name}}
+      <span>{{hero.exp}}/{{hero.level*20+100}}</span>
+    </a>
   </li>
 </ul>
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
