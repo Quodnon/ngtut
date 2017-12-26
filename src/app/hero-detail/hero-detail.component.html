@@ -3,7 +3,7 @@
   <div>
     <span>id:</span>{{hero.id}}
   </div>
-  <div><img [src]="hero.imgUrl" alt=""></div>
+  <div *ngIf="hero.imgUrl"><img [src]="hero.imgUrl" alt=""></div>
   <div>
     <label> name:
       <input [(ngModel)]="hero.name" placeholder="name">
@@ -11,4 +11,5 @@
   </div>
   <div>{{hero.description}}</div>
   <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
 </div>

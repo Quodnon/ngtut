@@ -1,14 +1,19 @@
-export default class Hero {
+export class Hero {
     id: number;
     name: string;
     description: string;
     imgUrl: string;
     exp: number;
     level: number;
-    constructor(hero: Hero) {
-        const {exp = 0} = hero;
-    }
 
+    constructor(objItem: any) {
+        this.name = objItem.name || 'noname';
+        this.description = objItem.description || '';
+        this.imgUrl = objItem.imgUrl || '';
+        this.exp = objItem.exp || 0;
+        this.level = objItem.level || 1;
+        this.id = objItem.id;
+    }
     // private nextLevelCup() {
     //     return this.level * 20 + 100;
     // }
